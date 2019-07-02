@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14460.32" systemVersion="18F132" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="DrinksList" representedClassName="DrinksList" syncable="YES">
+        <attribute name="drinkName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="fieldId" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="manufacturer" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="type" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="manufacturerName" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ManufacturersList" inverseName="drinksList" inverseEntity="ManufacturersList" syncable="YES"/>
+    </entity>
+    <entity name="LicensesType" representedClassName="LicensesType" syncable="YES">
+        <attribute name="fieldId" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="manufactureL" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ManufacturersList" inverseName="licType" inverseEntity="ManufacturersList" syncable="YES"/>
+    </entity>
+    <entity name="ManufacturersList" representedClassName="ManufacturersList" syncable="YES">
+        <attribute name="fieldId" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="licenseType" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="drinksList" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="DrinksList" inverseName="manufacturerName" inverseEntity="DrinksList" syncable="YES"/>
+        <relationship name="licType" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="LicensesType" inverseName="manufactureL" inverseEntity="LicensesType" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="DrinksList" positionX="-2959.91796875" positionY="-2214.03125" width="128" height="118"/>
+        <element name="ManufacturersList" positionX="-2772.90234375" positionY="-2290.984375" width="128" height="118"/>
+        <element name="LicensesType" positionX="-2588.94921875" positionY="-2182.94140625" width="128" height="88"/>
+    </elements>
+</model>
