@@ -67,7 +67,7 @@ class ViewController: UIViewController {
         
         let licList = fetchedResultsControllerL.fetchedObjects as! [LicensesType]
         
-        print("List1: \(licList)")
+        print("List1 Lic: \(licList)")
         print("Field: \(drinksList[0].manufacturerName)")
         
 
